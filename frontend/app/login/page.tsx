@@ -6,25 +6,14 @@ import React, { useState } from 'react';
 const Login = ()=>{
     const [email, setEmail] = useState("")
     const [password, setPass] = useState("")
+    
     const handleEmailChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
         setEmail(e.target.value)
-        console.log(email)
     }
-
-    const validarEmail = () => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex para verificar o formato do email
-        return regex.test(email);
-      };
     const handlePassChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
         setPass(e.target.value)
-        console.log(password)
     }
     const submitForm = () =>{
-        if(validarEmail()){
-            window.alert("Email")
-            setEmail("")
-            setPass("")
-        }
         const data = {
             "email":email,
             "pass":password
